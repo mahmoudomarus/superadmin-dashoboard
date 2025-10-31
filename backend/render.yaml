@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: krib-superadmin-backend
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: HOST_DASHBOARD_URL
+        value: https://krib-host-dahsboard-backend.onrender.com
+      - key: HOST_DASHBOARD_API_KEY
+        sync: false
+      - key: AGENT_DASHBOARD_URL
+        value: https://krib-real-estate-agent-dahaboard-backend.onrender.com
+      - key: AGENT_DASHBOARD_API_KEY
+        sync: false
+      - key: AGENT_DASHBOARD_SUPABASE_URL
+        value: https://lnhhdaiyhphkmhikcagj.supabase.co
+      - key: AGENT_DASHBOARD_SUPABASE_KEY
+        sync: false
+      - key: CUSTOMER_PLATFORM_URL
+        value: https://krib-backend.onrender.com
+      - key: CUSTOMER_PLATFORM_API_KEY
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+    healthCheckPath: /api/health
+
