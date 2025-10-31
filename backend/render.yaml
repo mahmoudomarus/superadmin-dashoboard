@@ -15,9 +15,9 @@ services:
       - key: SUPABASE_URL
         value: https://nezywqshjaxnhgrfjxof.supabase.co
       - key: SUPABASE_SERVICE_KEY
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5lenl3cXNoamF4bmhncmZqeG9mIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTkzNDU0NiwiZXhwIjoyMDc3NTEwNTQ2fQ.MN9PAgigX8LineMvuvPh86AFGw6Bs8PTAspJQar4o4Y
       - key: REDIS_URL
-        sync: false
+        value: redis://default:AWn2AAIncDIwMjU1MWI5OGY5ZDY0MGYxYjkxZWY5NzY1MDJiOGRiYnAyMjcxMjY@certain-leopard-27126.upstash.io:6379
       - key: SECRET_KEY
         sync: false
       - key: ENCRYPTION_KEY
