@@ -1,24 +1,27 @@
 services:
+  # Backend API
   - type: web
     name: krib-superadmin-backend
     env: python
     region: oregon
     plan: starter
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: SUPABASE_URL
-        sync: false
+        value: https://nezywqshjaxnhgrfjxof.supabase.co
       - key: SUPABASE_SERVICE_KEY
         sync: false
       - key: REDIS_URL
         sync: false
       - key: SECRET_KEY
-        generateValue: true
+        sync: false
       - key: ENCRYPTION_KEY
-        generateValue: true
+        sync: false
       - key: HOST_DASHBOARD_URL
         value: https://krib-host-dahsboard-backend.onrender.com
       - key: HOST_DASHBOARD_API_KEY
@@ -37,5 +40,19 @@ services:
         sync: false
       - key: ENVIRONMENT
         value: production
-    healthCheckPath: /api/health
+
+  # Frontend
+  - type: web
+    name: krib-superadmin-frontend
+    env: node
+    region: oregon
+    plan: starter
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NEXT_PUBLIC_API_URL
+        value: https://krib-superadmin-backend.onrender.com
 
