@@ -26,8 +26,6 @@ class Settings(BaseSettings):
     HOST_DASHBOARD_API_KEY: str
     HOST_DASHBOARD_SUPABASE_URL: Optional[str] = None
     HOST_DASHBOARD_SUPABASE_KEY: Optional[str] = None
-    HOST_DASHBOARD_SUPABASE_URL: Optional[str] = None
-    HOST_DASHBOARD_SUPABASE_KEY: Optional[str] = None
     
     # Platform APIs - Agent Dashboard
     AGENT_DASHBOARD_URL: str = "https://krib-real-estate-agent-dahaboard-backend.onrender.com"
