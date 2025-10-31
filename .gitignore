@@ -1,13 +1,15 @@
+# Environment variables (NEVER COMMIT)
+.env
+.env.*
+*.env
+backend/.env
+frontend/.env.local
+
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
 venv/
 env/
-ENV/
-.venv
 
 # Node
 node_modules/
@@ -16,35 +18,18 @@ out/
 build/
 dist/
 
-# Environment
-.env
-.env.local
-.env.*.local
-backend/.env
-
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 
 # OS
 .DS_Store
-Thumbs.db
 
 # Logs
 *.log
-logs/
-
-# Test coverage
-.coverage
-htmlcov/
-.pytest_cache/
 
 # Database
 *.db
-*.sqlite
 
 # Misc
 .vercel
